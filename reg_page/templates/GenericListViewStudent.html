@@ -1,0 +1,26 @@
+{% extends 'basicTemplate.html' %}  
+{% block title %} Generic Student List View {% endblock %}  
+{% block content %}  
+{% if student_list %}  
+<table border="1">  
+<tr>  
+<th>USN</th>  
+<th>Courses Enrolled</th>  
+</tr>  
+{% for student in object_list %}  
+<tr>  
+<td>  
+<span>{{student.usn}}</span> 
+</td>  
+<td>  
+{% for course in student.enrollment.all %}  
+<span>{{course.coursename}}</span>  
+{% endfor %}  
+</td>  
+</tr>  
+{% endfor %}  
+</table>  
+{% else %}  
+<h1>No Students Enrolled</h1>  
+{% endif %}  
+{% endblock %} 
