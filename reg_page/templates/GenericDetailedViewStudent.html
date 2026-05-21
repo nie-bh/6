@@ -1,9 +1,0 @@
-{% extends 'basicTemplate.html' %}  
-{% block title %} Detailed Student View {% endblock %}  
-{% block content %}  
-<h1> Student Name: {{object.name}}</h1>  
-<h1>Student USN: {{object.usn}}</h1>  
-<h1> Student Sem: {{object.sem}}</h1>  
-<br>
-<a href="{% url 'student-delete' object.id %}" style="padding: 10px; background-color: red; color: white; text-decoration: none;">Delete Student</a>
-{% endblock %}  
